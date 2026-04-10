@@ -50,12 +50,12 @@
 
         /* Časť pre info panel - presne definovaná šírka */
         .info-section {
-            width: 320px; /* Fixná šírka v pixeloch, aby sa panel nehýbal */
+            width: 240px; /* Fixná šírka v pixeloch, aby sa panel nehýbal */
             flex-shrink: 0; /* Zakáže zmenšovanie tohto panelu */
             display: flex;
             flex-direction: column;
             border-left: 2px solid #333;
-            padding-left: 40px;
+            padding-left: 24px;
             box-sizing: border-box;
         }
 
@@ -67,9 +67,9 @@
         #sep { animation: blink 1s step-start infinite; padding: 0 0.02em; }
         @keyframes blink { 50% { opacity: 0; } }
 
-        #date { font-size: 45px; font-weight: 400; white-space: nowrap; }
-        #day-name { font-size: 30px; color: #888; text-transform: capitalize; margin-bottom: 5px; }
-        #nameday { font-size: 22px; color: #4da3ff; }
+        #date { font-size: 38px; font-weight: 400; white-space: nowrap; }
+        #day-name { font-size: 24px; color: #888; text-transform: capitalize; margin-bottom: 5px; }
+        #nameday { font-size: 16px; color: #4da3ff; }
         
         #weather-container { 
             margin-top: 25px; 
@@ -77,8 +77,8 @@
             align-items: center; 
             gap: 15px;
         }
-        #w-icon { font-size: 60px; }
-        #temp { font-size: 60px; font-weight: 400; }
+        #w-icon { font-size: 45px; }
+        #temp { font-size: 45px; font-weight: 400; }
 
         /* UI Ovládanie */
         #ui {
