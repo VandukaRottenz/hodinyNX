@@ -24,9 +24,18 @@
         .main-container {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 6vw;
-            width: 95%;
+            width: 100%; /* Natiahnutie na celú šírku */
+            height: 100%;
+            padding: 0 5vw;
+            box-sizing: border-box;
+        }
+
+        /* Nový kontajner pre hodiny, ktorý zabezpečí ich pozíciu */
+        .time-wrapper {
+            flex: 1; /* Zaberie všetok voľný priestor vľavo */
+            display: flex;
+            justify-content: center; /* Vystredí hodiny v rámci tohto priestoru */
+            align-items: center;
         }
 
         #time {
@@ -35,6 +44,7 @@
             display: flex; align-items: center;
             letter-spacing: -0.02em;
             transition: font-family 0.2s ease;
+            white-space: nowrap;
         }
 
         .f-google { font-family: 'Product Sans', sans-serif; }
@@ -50,7 +60,10 @@
             flex-direction: column;
             border-left: 2px solid #333;
             padding-left: 4vw;
-            min-width: 25vw;
+            /* Fixná šírka pravého panelu */
+            flex-basis: 25vw; 
+            flex-shrink: 0;
+            flex-grow: 0;
         }
 
         #date { font-size: 3.8vw; font-weight: 400; }
@@ -90,8 +103,10 @@
 <body onmousemove="showUI()" onclick="showUI()" ontouchstart="showUI()">
 
     <div class="main-container">
-        <div id="time" class="f-google">
-            <span id="h">00</span><span id="sep">:</span><span id="m">00</span>
+        <div class="time-wrapper">
+            <div id="time" class="f-google">
+                <span id="h">00</span><span id="sep">:</span><span id="m">00</span>
+            </div>
         </div>
 
         <div id="info-panel">
